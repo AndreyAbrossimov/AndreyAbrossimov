@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrey Abrossimov 13.02.2023 </title>
+    
+</head>
+
+    <script type="text/javascript">
+        function TimesOfDay()
+        {
+            let data = new Date();
+            let hours = data.getHours();
+            if (hours < 4) {
+                Times = "Ночь"
+            }
+            else if (hours >= 4 && hours < 12){
+                Times = "Утро"
+            }
+            else if (hours >= 12 && hours < 16){
+                Times = "День"
+            }
+            else Times = "Вечер"
+            return (Times)
+        }
+        alert (TimesOfDay())
+        
+    </script>
+    <noscript>Ваш браузер не поддерживает JavaScript, или его поддрежка отключена</noscript>
+<body>
+</body>
+</html>

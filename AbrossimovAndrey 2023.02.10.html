@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrey Abrossimov</title>
+    <!--<link rel="stylesheet" href="style.css"-->
+</head>
+<body>
+    <script type="text/javascript">
+    function dig() {
+        let rundom = [];
+        let rund = [];
+        for (let i = 0; i < 20; i++) {
+            let numb = Math.floor(Math.random() * 10)+1;
+            rundom.push(numb);
+            if (numb%2 == 0)
+                rund.push(numb);
+            else continue;
+        }
+        document.write(rundom + "<br>")
+        document.write(rund)
+        
+    }
+    dig();
+    </script>
+    <noscript>Ваш браузер не поддерживает JavaScript, или его поддрежка отключена</noscript>
+</body>
+</html>
