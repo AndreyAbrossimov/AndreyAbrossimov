@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrey Abrossimov</title>
+    <style>
+        #mess{color: red;}
+    </style>
+</head>
+
+<body>
+    <h1> Введите номер в формате 8/7хххххххххх</h1>
+    <form action="">
+        <input type="number" id="phone" placeholder="">
+    </form>
+    <div id="mess"></div>
+    <button onclick="checkNumber()">Submit</button>
+</body>
+
+<script>
+    function checkNumber(){
+        let NumPattern = /^[8|7]\d{10}$/;
+        let number = document.getElementById('phone');
+    /*if(NumPattern.test(number.value)){
+       message = `<h1> Номер корректен ${number.value}</h1>`
+        }*/
+    if(!NumPattern.test(number.value)){
+        mess.innerHTML = `<h4> Номер ${number.value} НЕКОРРЕКТЕН</h4>`
+    }
+    
+}
+</script>
+<noscript>Ваш браузер не поддерживает JavaScript, или его поддрежка отключена</noscript>
+
+</html>
