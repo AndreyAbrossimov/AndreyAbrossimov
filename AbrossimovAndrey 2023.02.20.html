@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrey Abrossimov</title>
+    
+</head>
+
+<body>
+<div class="container" style="margin-top: 50px;">
+    <h3>Find</h3>
+        <form action="">
+            <input type="text" id="search">
+            <button id="search-btn" type="button" onclick="searchWord()">Search</button>
+        </form><br><br>
+    <h3>Replace</h3>
+        <form action="">
+            <input type="text" id="replace">
+            <button id="replace-btn" type="button" onclick="replaceWord()">Replace</button>
+        </form>
+
+    <div class="text" id="txt">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        A hic reprehenderit delectus ratione repudiandae tenetur incidunt voluptas ullam impedit 
+        aspernatur nam qui 
+        sunt ad recusandae numquam, 
+        quas aliquam sint deserunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe natus minima soluta tempore totam! 
+        Distinctio pariatur, dicta in odit laborum saepe rerum, rem dolorum deserunt sint iure harum veniam possimus.
+    </div>
+</div>   
+</body>
+
+<script>
+function searchWord()
+{
+    let searchWord = document.getElementById('search').value;
+    let text = document.getElementById('txt').innerText;
+    let pattern = new RegExp(searchWord, 'gi');
+
+    let new_text = text.replace(pattern, 
+    `<span style="background-color: yellow;">${searchWord}</span>`
+    );
+
+    document.getElementById('txt').innerHTML = new_text;
+    }
+
+function replaceWord()
+{
+    let searchWord = document.getElementById('search').value;
+    let replaceWord = document.getElementById('replace').value;
+    let text = document.getElementById('txt').innerText;
+    let pattern = new RegExp(searchWord, 'gi');
+    let new_text = text.replace(pattern, replaceWord);
+
+    document.getElementById('txt').innerHTML = new_text;
+    }      
+</script>
+<noscript>Ваш браузер не поддерживает JavaScript, или его поддрежка отключена</noscript>
+
+</html>
