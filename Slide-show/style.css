@@ -1,0 +1,40 @@
+.header{
+    display: flex;
+    justify-content: center;
+}
+.slide{
+    height: 25rem;
+    width: 60rem;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
+.left, .right{
+    align-self: center;
+    color: brown;
+    font-size: 2rem;
+    font-weight: 10px;
+    background-color: rgba(185, 230, 240, .6);
+    padding: 2%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.slide-text{
+    align-items: flex-end;
+}
+.slide-switch{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot{
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: aqua;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 0 12px;
+    cursor: pointer;
+}
