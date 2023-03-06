@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let menu = {
+            dish: 'Turkey',
+            price: 2000,
+            client: 'Kile',
+            ingr: 5,
+            Dish2: 'Carrot',
+            price2: 500
+        }
+        
+        for (const key in menu){
+            if(isNan(menu[key]))==false{
+                menu[key]*=2;
+            }
+        }
+        console.log(menu)
+    </script>
+</body>
+</html>
