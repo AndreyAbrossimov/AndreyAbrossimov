@@ -2,6 +2,11 @@
     display: flex;
     justify-content: center;
 }
+
+.slide-show{
+    width: auto;
+}
+
 .slide{
     height: 25rem;
     width: 60rem;
@@ -9,6 +14,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .left, .right{
     align-self: center;
     color: brown;
@@ -23,12 +29,14 @@
 .slide-text{
     align-items: flex-end;
 }
+
 .slide-switch{
     text-align: center;
     margin-top: 10px;
 }
 
 .dot{
+    cursor: pointer;
     height: 13px;
     width: 13px;
     border-radius: 50%;
@@ -36,5 +44,4 @@
     border: 1px solid black;
     display: inline-block;
     margin: 0 12px;
-    cursor: pointer;
 }
