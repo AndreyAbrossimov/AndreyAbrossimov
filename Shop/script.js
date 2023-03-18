@@ -26,6 +26,9 @@ function createProductCard(product) {
   const price = document.createElement('p');
   price.textContent = `Цена: ${product.price} KZT`;
 
+  const description = document.createElement('p');
+  description.textContent = `Описание: ${product.description}`;
+
   const addButton = document.createElement('button');
   addButton.textContent = 'Добавить';
   addButton.onclick = () => addToCart(product);
@@ -33,6 +36,7 @@ function createProductCard(product) {
   card.appendChild(title);
   card.appendChild(image);
   card.appendChild(price);
+  card.appendChild(description);
   card.appendChild(addButton);
 
   return card;
@@ -75,7 +79,7 @@ function renderCart() {
     const title = document.createElement('h4');
     title.textContent = item.title;
     cartItem.appendChild(title);
-
+    
     const quantity = document.createElement('p');
     quantity.textContent = `Количество: ${item.quantity}`;
     cartItem.appendChild(quantity);
