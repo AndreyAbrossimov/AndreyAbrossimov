@@ -5,8 +5,8 @@ const cart = {};
 
 fetch('https://dummyjson.com/products?limit=12')
   .then(response => response.json())
-  .then(products => {
-    products.forEach(product => {
+  .then(data => {
+    data.products.forEach(product => {
       const card = createProductCard(product);
       catalog.appendChild(card);
    });
@@ -20,7 +20,7 @@ function createProductCard(product) {
   title.textContent = product.title;
 
   const image = document.createElement('img');
-  image.src = product.image;
+  image.src = product.images[2];
   image.width = 150;
 
   const price = document.createElement('p');
