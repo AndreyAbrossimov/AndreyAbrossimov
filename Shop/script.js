@@ -3,13 +3,13 @@ const cartItems = document.getElementById('cart-items');
 const totalPrice = document.getElementById('total-price');
 const cart = {};
 
-fetch('https://dummyjson.com/products')
-  .then(res => res.json())
+fetch('https://dummyjson.com/products?limit=12')
+  .then(response => response.json())
   .then(products => {
     products.forEach(product => {
       const card = createProductCard(product);
       catalog.appendChild(card);
-    });
+   });
   });
 
 function createProductCard(product) {
@@ -20,11 +20,11 @@ function createProductCard(product) {
   title.textContent = product.title;
 
   const image = document.createElement('img');
-  image.src = product.image_url;
+  image.src = product.image;
   image.width = 150;
 
   const price = document.createElement('p');
-  price.textContent = `Цена: ${product.price} ₽`;
+  price.textContent = `Цена: ${product.price} KZT`;
 
   const addButton = document.createElement('button');
   addButton.textContent = 'Добавить';
@@ -82,7 +82,7 @@ function renderCart() {
 
     const price = document.createElement('p');
     const itemTotal = item.price * item.quantity;
-    price.textContent = `Сумма: ${itemTotal} ₽`;
+    price.textContent = `Сумма: ${itemTotal} KZT`;
     cartItem.appendChild(price);
 
     const removeButton = document.createElement('button');
@@ -104,5 +104,5 @@ function renderCart() {
     total += itemTotal;
   }
 
-  totalPrice.textContent = `Общая сумма: ${total} ₽`;
+  totalPrice.textContent = `Общая сумма: ${total} KZT`;
 }
