@@ -20,7 +20,7 @@ function createProductCard(product) {
   title.textContent = product.title;
 
   const image = document.createElement('img');
-  image.src = product.images[2];
+  image.src = product.images[0];
   image.width = 150;
 
   const price = document.createElement('p');
@@ -104,5 +104,5 @@ function renderCart() {
     total += itemTotal;
   }
 
-  totalPrice.textContent = `Общая сумма: ${total} KZT`;
+  totalPrice.textContent = `${total} KZT`;
 }

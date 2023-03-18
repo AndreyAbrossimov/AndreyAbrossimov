@@ -13,7 +13,7 @@ body {
   }
   
   .product-card {
-    width: 200px;
+    width: 400px;
     padding: 10px;
     border: 1px solid #ccc;
     margin: 5px;
@@ -33,7 +33,7 @@ body {
   }
   
   #cart {
-    max-width: 300px;
+    max-width: 600px;
     margin: 0 auto;
   }
   
