@@ -3,15 +3,17 @@ const cartItems = document.getElementById('cart-items');
 const totalPrice = document.getElementById('total-price');
 const cart = {};
 
-fetch('https://dummyjson.com/products?limit=12')
-  .then(response => response.json())
+fetch('https://dummyjson.com/products?limit=12') 
+  .then(response => response.json()) // Преобразуем строку в JSON
   .then(data => {
-    data.products.forEach(product => {
-      const card = createProductCard(product);
-      catalog.appendChild(card);
+    data.products.forEach(product => { // Обрабатываем каждый продукт из полученных данных
+      const card = createProductCard(product); // Создаем элемент карточки продукта
+      catalog.appendChild(card); // Добавляем созданную карточку продукта в каталог
    });
   });
 
+
+ // создаем карточку товара на основе объекта продукта и возвращаем ее в виде элемента div.
 function createProductCard(product) {
   const card = document.createElement('div');
   card.className = 'product-card';
@@ -42,6 +44,7 @@ function createProductCard(product) {
   return card;
 }
 
+// добавляем товара в корзину по кнопке 'Добавить', если товар в корзине, то просто увеличиваем его кол-во.
 function addToCart(product) {
   if (cart[product.id]) {
     cart[product.id].quantity++;
@@ -51,7 +54,7 @@ function addToCart(product) {
 
   renderCart();
 }
-
+// Удаляем товар с корзины
 function removeFromCart(productId) {
   delete cart[productId];
   renderCart();
@@ -66,7 +69,7 @@ function changeQuantity(productId, delta) {
     renderCart();
   }
 }
-
+// Создаем в корзине добавленный товар и его свойства-действия, а именно кнопки "удалить" +/- количества, проводим расчет суммы на основании количества и цены товара, а также суммируем все суммы
 function renderCart() {
   cartItems.innerHTML = '';
   let total = 0;
