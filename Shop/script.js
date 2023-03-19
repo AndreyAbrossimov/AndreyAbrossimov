@@ -91,7 +91,6 @@ function renderCart() {
     const quantity = document.createElement('p');
     quantity.textContent = `Количество: ${item.quantity}`;
     cartItem.appendChild(quantity);
-
     
     const increaseButton = document.createElement('button');
     increaseButton.textContent = '+';
