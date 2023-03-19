@@ -76,6 +76,11 @@ function renderCart() {
     const cartItem = document.createElement('div');
     cartItem.className = 'cart-item';
 
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Удалить';
+    removeButton.onclick = () => removeFromCart(productId);
+    cartItem.appendChild(removeButton);
+
     const title = document.createElement('h4');
     title.textContent = item.title;
     cartItem.appendChild(title);
@@ -84,16 +89,7 @@ function renderCart() {
     quantity.textContent = `Количество: ${item.quantity}`;
     cartItem.appendChild(quantity);
 
-    const price = document.createElement('p');
-    const itemTotal = item.price * item.quantity;
-    price.textContent = `Сумма: ${itemTotal} KZT`;
-    cartItem.appendChild(price);
-
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Удалить';
-    removeButton.onclick = () => removeFromCart(productId);
-    cartItem.appendChild(removeButton);
-
+    
     const increaseButton = document.createElement('button');
     increaseButton.textContent = '+';
     increaseButton.onclick = () => changeQuantity(productId, 1);
@@ -104,9 +100,14 @@ function renderCart() {
     decreaseButton.onclick = () => changeQuantity(productId, -1);
     cartItem.appendChild(decreaseButton);
 
+    const price = document.createElement('p');
+    const itemTotal = item.price * item.quantity;
+    price.textContent = `Сумма: ${itemTotal} KZT`;
+    cartItem.appendChild(price);
+ 
     cartItems.appendChild(cartItem);
     total += itemTotal;
   }
 
-  totalPrice.textContent = `${total} KZT`;
+  totalPrice.textContent = `Общая сумма: ${total} KZT`;
 }
